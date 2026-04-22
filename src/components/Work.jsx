@@ -34,19 +34,20 @@ const Work = () => {
   return (
     <section id="work" ref={containerRef}>
       <div className="container">
-        <h2 style={{ fontSize: '3rem', marginBottom: '4rem', letterSpacing: '4px' }}>SELECTED WORKS</h2>
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(2, 1fr)', 
-          gap: '4rem',
-        }}>
+        <h2 style={{ 
+          fontSize: 'var(--fs-h3)', 
+          marginBottom: 'clamp(2rem, 8vw, 4rem)', 
+          letterSpacing: '4px',
+          textAlign: 'center'
+        }}>SELECTED WORKS</h2>
+        <div className="grid grid-2">
           {projects.map((project, i) => (
             <div 
               key={project.id} 
               ref={el => itemsRef.current[i] = el}
               style={{ position: 'relative', overflow: 'hidden' }}
             >
-              <div ratio="4/5" style={{ 
+              <div style={{ 
                 width: '100%', 
                 aspectRatio: project.size === 'large' ? '4/5' : '1/1',
                 overflow: 'hidden',
@@ -62,13 +63,13 @@ const Work = () => {
                     objectFit: 'cover',
                     transition: 'transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)'
                   }}
-                  onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.1)'}
+                  onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
                   onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
                 />
               </div>
               <div style={{ marginTop: '1.5rem' }}>
-                <p style={{ fontSize: '0.8rem', color: 'var(--accent)', letterSpacing: '2px', marginBottom: '0.5rem' }}>{project.category}</p>
-                <h3 style={{ fontSize: '1.5rem' }}>{project.title}</h3>
+                <p style={{ fontSize: 'var(--fs-small)', color: 'var(--accent)', letterSpacing: '2px', marginBottom: '0.5rem' }}>{project.category}</p>
+                <h3 style={{ fontSize: '1.5rem', fontFamily: 'var(--font-serif)' }}>{project.title}</h3>
               </div>
             </div>
           ))}

@@ -58,7 +58,13 @@ function App() {
         <Contact />
       </main>
       <footer>
-        <div className="container" style={{ padding: '2rem 0', textAlign: 'center', opacity: 0.5, fontSize: '0.9rem' }}>
+        <div className="container" style={{ 
+          padding: 'var(--container-padding) 0', 
+          textAlign: 'center', 
+          opacity: 0.5, 
+          fontSize: 'var(--fs-small)',
+          letterSpacing: '1px'
+        }}>
           &copy; {new Date().getFullYear()} QUICKCLIXS / MRIDUL SRIVASTAVA. ALL RIGHTS RESERVED.
         </div>
       </footer>

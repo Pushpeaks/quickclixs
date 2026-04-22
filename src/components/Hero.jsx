@@ -19,19 +19,26 @@ const Hero = () => {
     <section id="hero" style={{ justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
       <div className="container">
         <div className="reveal-text">
-          <h1 ref={title1Ref} style={{ fontSize: '7rem', lineHeight: '0.9', marginBottom: '0.5rem' }}>CAPTURING</h1>
+          <h1 ref={title1Ref} style={{ fontSize: 'var(--fs-display)', lineHeight: '0.9', marginBottom: '0.5rem' }}>CAPTURING</h1>
         </div>
         <div className="reveal-text">
-          <h1 ref={title2Ref} style={{ fontSize: '7rem', lineHeight: '0.9', color: 'transparent', WebkitTextStroke: '1px var(--foreground)' }}>ETERNITY</h1>
+          <h1 ref={title2Ref} style={{ 
+            fontSize: 'var(--fs-display)', 
+            lineHeight: '0.9', 
+            color: 'transparent', 
+            WebkitTextStroke: '1px var(--foreground)' 
+          }}>ETERNITY</h1>
         </div>
         <p ref={subRef} style={{ 
           marginTop: '2rem', 
-          maxWidth: '500px', 
+          maxWidth: '600px', 
           margin: '2rem auto', 
-          fontSize: '1.1rem', 
-          letterSpacing: '1px',
+          fontSize: 'var(--fs-small)', 
+          letterSpacing: '2px',
           fontWeight: '300',
-          textTransform: 'uppercase'
+          textTransform: 'uppercase',
+          opacity: 0.6,
+          padding: '0 1rem'
         }}>
           A Spiritual Journey Through the Lens of Mridul Srivastava
         </p>

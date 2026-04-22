@@ -11,6 +11,17 @@
   --cursor-size: 20px;
   --font-serif: 'Playfair Display', serif;
   --font-sans: 'Inter', sans-serif;
+  
+  /* Fluid Spacing */
+  --section-padding: clamp(4rem, 10vw, 8rem);
+  --container-padding: clamp(1rem, 5vw, 2rem);
+  
+  /* Fluid Typography */
+  --fs-display: clamp(3.5rem, 12vw, 8rem);
+  --fs-h2: clamp(2.5rem, 8vw, 5rem);
+  --fs-h3: clamp(1.5rem, 5vw, 3rem);
+  --fs-body: clamp(1rem, 2vw, 1.2rem);
+  --fs-small: clamp(0.7rem, 1.5vw, 0.9rem);
 }
 
 * {
@@ -34,14 +45,14 @@ h1, h2, h3, h4 {
 
 section {
   min-height: 100vh;
-  padding: 8rem 2rem;
+  padding: var(--section-padding) var(--container-padding);
   display: flex;
   flex-direction: column;
   position: relative;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   width: 100%;
 }
@@ -77,12 +88,13 @@ section {
   color: var(--accent);
   text-decoration: none;
   font-family: var(--font-serif);
-  font-size: 1.1rem;
+  font-size: var(--fs-body);
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   position: relative;
   overflow: hidden;
   background: transparent;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .magnetic-btn:hover {
@@ -105,6 +117,12 @@ section {
   transition: transform 0.1s ease;
 }
 
+@media (max-width: 768px) {
+  .custom-cursor {
+    display: none;
+  }
+}
+
 /* 3D Scene Container */
 #scene-container {
   position: fixed;
@@ -124,4 +142,27 @@ section {
 .reveal-text span {
   display: block;
   transform: translateY(100%);
+}
+
+/* Responsive Grid */
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 1024px) {
+  .grid-2 {
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
 }
