@@ -33,12 +33,7 @@ const About = () => {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="glass" style={{ 
-      margin: 'clamp(2rem, 10vw, 8rem) var(--container-padding)', 
-      borderRadius: '40px',
-      minHeight: 'auto',
-      padding: 'clamp(4rem, 15vw, 10rem) var(--container-padding)'
-    }}>
+    <section id="about" ref={sectionRef} className="glass about-glass-card">
       <div className="container">
         <div className="grid grid-2" style={{ alignItems: 'center' }}>
           <div ref={textRef} style={{ order: 1 }}>
@@ -49,56 +44,17 @@ const About = () => {
             </p>
           </div>
           <div style={{ position: 'relative', order: 2 }}>
-             <div ref={imageRef} style={{ 
-                width: '100%', 
-                height: 'clamp(300px, 50vw, 500px)', 
-                border: '1px solid var(--accent)', 
-                padding: '1rem',
-                borderRadius: '8px'
-              }}>
-                <div style={{ 
-                  width: '100%', 
-                  height: '100%', 
-                  background: 'var(--gray-100)', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'center',
-                  fontSize: '0.8rem',
-                  letterSpacing: '5px',
-                  opacity: 0.5,
-                  textAlign: 'center'
-                }}>
+             <div ref={imageRef} className="about-image-wrapper">
+                <div className="about-placeholder">
                   [ PORTRAIT OF THE ARTIST ]
                 </div>
              </div>
-             <div ref={quoteRef} className="quote-box" style={{ 
-                position: 'absolute', 
-                bottom: '-1rem', 
-                right: '-1rem', 
-                background: 'var(--accent)', 
-                color: 'black', 
-                padding: 'clamp(1rem, 3vw, 2rem)',
-                fontFamily: 'var(--font-serif)',
-                fontSize: 'clamp(1rem, 4vw, 1.5rem)',
-                maxWidth: '80%',
-                boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
-              }}>
+             <div ref={quoteRef} className="quote-box">
                 "Faith is the light <br/> that never fades."
              </div>
           </div>
         </div>
       </div>
-      <style dangerouslySetInnerHTML={{ __html: `
-        @media (max-width: 768px) {
-          .quote-box {
-            position: relative !important;
-            bottom: 0 !important;
-            right: 0 !important;
-            margin-top: 2rem;
-            max-width: 100% !important;
-          }
-        }
-      `}} />
     </section>
   );
 };

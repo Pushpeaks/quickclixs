@@ -25,55 +25,55 @@ const Contact = () => {
   return (
     <section id="contact" ref={sectionRef}>
       <div className="container">
-        <div ref={headerRef} style={{ textAlign: 'center', marginBottom: 'clamp(3rem, 10vw, 6rem)' }}>
+        <div ref={headerRef} className="contact-header">
           <h2 style={{ fontSize: 'var(--fs-h2)', marginBottom: '1rem' }}>LET'S CONNECT</h2>
           <p style={{ opacity: 0.6, letterSpacing: '2px', fontSize: 'var(--fs-small)' }}>AVAILABLE FOR SHOOTS GLOBALLY</p>
         </div>
         
         <div className="grid grid-2">
-          <div ref={formRef} className="glass" style={{ padding: 'clamp(2rem, 5vw, 4rem)' }}>
-            <form style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                <label style={{ fontSize: '0.7rem', opacity: 0.5, letterSpacing: '1px' }}>YOUR NAME</label>
-                <input type="text" style={{ background: 'transparent', border: 'none', borderBottom: '1px solid var(--gray-300)', padding: '1rem 0', color: 'white', outline: 'none', fontSize: '1rem' }} />
+          <div ref={formRef} className="glass contact-form-container">
+            <form className="contact-form">
+              <div className="form-group">
+                <label className="form-label">YOUR NAME</label>
+                <input type="text" className="form-input" />
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                <label style={{ fontSize: '0.7rem', opacity: 0.5, letterSpacing: '1px' }}>EMAIL ADDRESS</label>
-                <input type="email" style={{ background: 'transparent', border: 'none', borderBottom: '1px solid var(--gray-300)', padding: '1rem 0', color: 'white', outline: 'none', fontSize: '1rem' }} />
+              <div className="form-group">
+                <label className="form-label">EMAIL ADDRESS</label>
+                <input type="email" className="form-input" />
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                <label style={{ fontSize: '0.7rem', opacity: 0.5, letterSpacing: '1px' }}>MESSAGE</label>
-                <textarea rows="4" style={{ background: 'transparent', border: 'none', borderBottom: '1px solid var(--gray-300)', padding: '1rem 0', color: 'white', outline: 'none', resize: 'none', fontSize: '1rem' }}></textarea>
+              <div className="form-group">
+                <label className="form-label">MESSAGE</label>
+                <textarea rows="4" className="form-input" style={{ resize: 'none' }}></textarea>
               </div>
               <button type="submit" className="magnetic-btn" style={{ width: 'fit-content', marginTop: '1rem' }}>SEND MESSAGE</button>
             </form>
           </div>
           
-          <div ref={infoRef} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '2.5rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-              <div style={{ background: 'var(--gray-100)', padding: 'clamp(1rem, 3vw, 1.5rem)', borderRadius: '50%', color: 'var(--accent)' }}>
+          <div ref={infoRef} className="contact-info">
+            <div className="info-item">
+              <div className="info-icon">
                 <Camera size={24} />
               </div>
               <div>
-                <p style={{ opacity: 0.5, fontSize: '0.7rem', letterSpacing: '1px' }}>INSTAGRAM</p>
-                <a href="https://instagram.com/quickclixs" style={{ color: 'white', textDecoration: 'none', fontSize: 'var(--fs-body)', fontWeight: '500' }}>@quickclixs</a>
+                <p className="form-label">INSTAGRAM</p>
+                <a href="https://instagram.com/quickclixs" className="info-link">@quickclixs</a>
               </div>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-              <div style={{ background: 'var(--gray-100)', padding: 'clamp(1rem, 3vw, 1.5rem)', borderRadius: '50%', color: 'var(--accent)' }}>
+            <div className="info-item">
+              <div className="info-icon">
                 <LucideMail size={24} />
               </div>
               <div>
-                <p style={{ opacity: 0.5, fontSize: '0.7rem', letterSpacing: '1px' }}>EMAIL</p>
-                <a href="mailto:hello@quickclixs.com" style={{ color: 'white', textDecoration: 'none', fontSize: 'var(--fs-body)', fontWeight: '500' }}>contact@quickclixs.com</a>
+                <p className="form-label">EMAIL</p>
+                <a href="mailto:hello@quickclixs.com" className="info-link">contact@quickclixs.com</a>
               </div>
             </div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-              <div style={{ background: 'var(--gray-100)', padding: 'clamp(1rem, 3vw, 1.5rem)', borderRadius: '50%', color: 'var(--accent)' }}>
+            <div className="info-item">
+              <div className="info-icon">
                 <LucideMapPin size={24} />
               </div>
               <div>
-                <p style={{ opacity: 0.5, fontSize: '0.7rem', letterSpacing: '1px' }}>LOCATION</p>
+                <p className="form-label">LOCATION</p>
                 <p style={{ fontSize: 'var(--fs-body)', fontWeight: '500' }}>India / Worldwide</p>
               </div>
             </div>

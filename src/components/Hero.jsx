@@ -16,34 +16,31 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="hero" style={{ justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
+    <section id="hero" className="hero-section">
       <div className="container">
         <div className="reveal-text">
-          <h1 ref={title1Ref} style={{ fontSize: 'var(--fs-display)', lineHeight: '0.9', marginBottom: '0.5rem' }}>CAPTURING</h1>
+          <h1 ref={title1Ref} className="hero-title">CAPTURING</h1>
         </div>
         <div className="reveal-text">
-          <h1 ref={title2Ref} style={{ 
-            fontSize: 'var(--fs-display)', 
-            lineHeight: '0.9', 
-            color: 'transparent', 
-            WebkitTextStroke: '1px var(--foreground)' 
-          }}>ETERNITY</h1>
+          <h1 ref={title2Ref} className="hero-title-outline">ETERNITY</h1>
         </div>
-        <p ref={subRef} style={{ 
-          marginTop: '2rem', 
-          maxWidth: '600px', 
-          margin: '2rem auto', 
-          fontSize: 'var(--fs-small)', 
-          letterSpacing: '2px',
-          fontWeight: '300',
-          textTransform: 'uppercase',
-          opacity: 0.6,
-          padding: '0 1rem'
-        }}>
+        <p ref={subRef} className="hero-sub">
           A Spiritual Journey Through the Lens of Mridul Srivastava
         </p>
         <div style={{ marginTop: '3rem' }}>
           <a href="#work" className="magnetic-btn">VIEW PORTFOLIO</a>
+        </div>
+        
+        <div className="scroll-indicator" style={{ 
+          position: 'absolute', 
+          bottom: '2rem', 
+          left: '50%', 
+          transform: 'translateX(-50%)',
+          opacity: 0.4,
+          fontSize: '0.7rem',
+          letterSpacing: '2px'
+        }}>
+          SCROLL TO EXPLORE
         </div>
       </div>
     </section>

@@ -45,31 +45,21 @@ const Work = () => {
             <div 
               key={project.id} 
               ref={el => itemsRef.current[i] = el}
-              style={{ position: 'relative', overflow: 'hidden' }}
+              className="work-grid-item"
             >
-              <div style={{ 
-                width: '100%', 
-                aspectRatio: project.size === 'large' ? '4/5' : '1/1',
-                overflow: 'hidden',
-                background: 'var(--gray-100)',
-                cursor: 'pointer'
-              }}>
+              <div 
+                className="work-image-container"
+                style={{ aspectRatio: project.size === 'large' ? '4/5' : '1/1' }}
+              >
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  style={{ 
-                    width: '100%', 
-                    height: '100%', 
-                    objectFit: 'cover',
-                    transition: 'transform 0.8s cubic-bezier(0.23, 1, 0.32, 1)'
-                  }}
-                  onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'}
-                  onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+                  className="work-image"
                 />
               </div>
-              <div style={{ marginTop: '1.5rem' }}>
-                <p style={{ fontSize: 'var(--fs-small)', color: 'var(--accent)', letterSpacing: '2px', marginBottom: '0.5rem' }}>{project.category}</p>
-                <h3 style={{ fontSize: '1.5rem', fontFamily: 'var(--font-serif)' }}>{project.title}</h3>
+              <div className="work-info">
+                <p className="work-category">{project.category}</p>
+                <h3 className="work-title">{project.title}</h3>
               </div>
             </div>
           ))}

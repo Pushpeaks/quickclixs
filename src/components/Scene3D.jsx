@@ -16,12 +16,13 @@ function AnimatedSphere() {
   return (
     <Float speed={2} rotationIntensity={1} floatIntensity={2}>
       <Sphere args={[1, 100, 100]} ref={meshRef}>
-        <meshStandardMaterial
+        <MeshDistortMaterial
           color="#d4af37"
+          attach="material"
+          distort={0.4}
+          speed={1.5}
           roughness={0.1}
           metalness={0.8}
-          emissive="#d4af37"
-          emissiveIntensity={0.2}
         />
       </Sphere>
     </Float>
