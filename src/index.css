@@ -481,3 +481,18 @@ footer .container {
   letter-spacing: 1px;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
+
+/* FINAL OVERRIDES FOR MOBILE */
+@media (max-width: 768px) {
+  .nav-links-desktop {
+    display: none !important;
+  }
+  .nav-mobile-toggle {
+    display: block !important;
+  }
+  .navbar {
+    background: rgba(5, 5, 5, 0.9) !important;
+    backdrop-filter: blur(20px) !important;
+    padding: 1rem !important;
+  }
+}
